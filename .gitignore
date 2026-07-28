@@ -1,0 +1,6 @@
+# Großen Java-Entwicklungsordner ignorieren
+KaffeeGeldWechsel/
+
+# Systemdateien ignorieren
+Thumbs.db
+.DS_Store

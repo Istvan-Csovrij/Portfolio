@@ -1,0 +1,29 @@
+.resourceA {
+    color: white;
+}
+
+.resourceA:hover {
+    font-size: 17px;
+    color: rgb(156, 217, 245);
+}
+
+.lenslaufHover:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-color: rgb(156, 217, 245);
+}
+
+.lenslaufHover:hover .lenslaufImg {
+    transform: rotateY(180deg);
+    transition: transform 1.5s ease;
+}
+
+h2 {
+    color: white;
+}
+
+.hoverSeide:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-color: rgb(156, 217, 245);
+}

@@ -1,0 +1,203 @@
+/* Spezifisches Styling für die Kontakt-Seite */
+
+.kontaktMain {
+    background-color: rgb(2, 71, 104);
+    /* Haupt-Blauton */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    /* Füllt den Bildschirm zwischen Header & Footer */
+}
+
+/* Die Dokumenten-Karte für den Kontakt */
+.kontaktSheet {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    /* Linke Spalte (Bild & Info), rechte Spalte (Formular) */
+    width: 100%;
+    max-width: 950px;
+    margin: 40px auto;
+    background-color: white;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Beschneidet Ecken passend zum Border-Radius */
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Linke Spalte: Sidebar mit geralt-Bild */
+.kontaktSidebar {
+    background-color: rgb(16, 37, 61);
+    /* Dunkelblau */
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.kontaktSidebarImg {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.kontaktSidebarInfo {
+    padding: 30px;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: auto;
+}
+
+.kontaktSidebarInfo h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: rgb(156, 217, 245);
+    /* Helles Blau für Akzent */
+    font-weight: 700;
+}
+
+.kontaktSidebarInfo p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.sidebarSignature {
+    padding: 0 30px 30px 30px;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+/* Rechte Spalte: Kontaktinformationen & Formular */
+.kontaktContent {
+    padding: 45px 40px;
+    box-sizing: border-box;
+}
+
+/* Die Kontaktdaten-Tabelle/Liste */
+.kontaktList {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.kontaktEntry {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.kontaktLabel {
+    font-weight: 700;
+    color: #555;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.kontaktValue {
+    font-size: 15px;
+    color: #222;
+}
+
+.kontaktValue a {
+    color: rgb(2, 71, 104);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.kontaktValue a:hover {
+    color: rgb(3, 109, 158);
+    text-decoration: underline;
+}
+
+/* Formular-Styling */
+.kontaktForm {
+    display: grid;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.formGroup label {
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+}
+
+.formGroup input,
+.formGroup textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: rgb(2, 71, 104);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(2, 71, 104, 0.15);
+}
+
+.submitBtn {
+    background-color: rgb(2, 71, 104);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    justify-self: start;
+}
+
+.submitBtn:hover {
+    background-color: rgb(3, 109, 158);
+}
+
+.submitBtn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    .kontaktSheet {
+        grid-template-columns: 1fr;
+        /* Stapelt Spalten untereinander */
+    }
+
+    .kontaktSidebarImg {
+        height: 200px;
+    }
+
+    .kontaktEntry {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .kontaktContent {
+        padding: 30px 20px;
+    }
+
+    .submitBtn {
+        width: 100%;
+        /* Button nimmt volle Breite ein */
+        justify-self: stretch;
+    }
+}

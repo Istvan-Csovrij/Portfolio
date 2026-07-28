@@ -1,0 +1,269 @@
+/* Layout für die Startseite mit Seitenleiste und Projekten */
+
+html {
+    scroll-behavior: smooth; /* Weiches Scrollen für Anker-Links */
+}
+
+main {
+    display: flex;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.seitenleiste {
+    display: flex;
+    width: 320px;
+    flex-shrink: 0;
+}
+
+.inseiteSeitenliste {
+    flex: 1;
+    padding: 10px;
+    color: white;
+}
+
+.inseiteSeitenliste h2 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: rgb(156, 217, 245);
+    border-bottom: 2px solid rgb(156, 217, 245);
+    padding-bottom: 8px;
+}
+
+.aplicatinsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Die Links in der Seitenleiste */
+.bestelA {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.bestelA:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(156, 217, 245);
+}
+
+.wertikalLinie {
+    border-left: 2px solid gray;
+    align-self: stretch;
+    margin-left: 20px;
+    height: auto;
+}
+
+/* Rechter Inhaltsbereich für die Projektdetails */
+.projekteInhalt {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Projektkarte */
+.projektKarte {
+    display: none; /* Standardmäßig ausgeblendet (gesteuert durch JS) */
+    background-color: white;
+    color: #333;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.projektKarte h3 {
+    font-size: 26px;
+    color: rgb(2, 71, 104);
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.projektSubtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 25px 0;
+    font-style: italic;
+}
+
+.projektSectionTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 25px 0 10px 0;
+}
+
+/* Tech-Stack Badges */
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.techBadge {
+    background-color: rgb(2, 71, 104);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+}
+
+/* Projekt-Bilder & Platzhalter */
+.projektMedia {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.projektMedia a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.projektCardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.projPlaceholder {
+    display: none; /* Aktiviert per onerror im HTML */
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    border: 2px dashed #ccc;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.projektMedia a:hover .projPlaceholder {
+    background-color: #ebebeb;
+    border-color: rgb(2, 71, 104);
+}
+
+.projPlaceholderText {
+    text-align: center;
+    font-size: 15px;
+    color: #777;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.projPlaceholderText strong {
+    color: rgb(2, 71, 104);
+    font-family: monospace;
+}
+
+/* Projekt-Aktionsbuttons */
+.projektActions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.projektBtn {
+    display: inline-block;
+    background-color: rgb(2, 71, 104);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 10px rgba(2, 71, 104, 0.2);
+}
+
+.projektBtn:hover {
+    background-color: rgb(3, 109, 158);
+}
+
+.projektBtn:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .seitenleiste {
+        width: 100%;
+    }
+    
+    .wertikalLinie {
+        display: none; /* Vertikale Trennlinie ausblenden */
+    }
+    
+    .projektMedia {
+        height: 250px;
+    }
+}
+
+/* Listen-Styling für Projektkarten */
+.cvList {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+
+.cvList li {
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 15px;
+}
+
+/* Willkommens-Meldung in der Projektübersicht */
+.welcomeProjectText {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.85);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+}
+
+.welcomeProjectText h3 {
+    margin: 0 0 10px 0;
+    color: rgb(156, 217, 245);
+    font-size: 22px;
+}
+
+.welcomeProjectText p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
