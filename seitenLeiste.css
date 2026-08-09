@@ -1,7 +1,8 @@
 /* Layout für die Startseite mit Seitenleiste und Projekten */
 
 html {
-    scroll-behavior: smooth; /* Weiches Scrollen für Anker-Links */
+    scroll-behavior: smooth;
+    /* Weiches Scrollen für Anker-Links */
 }
 
 main {
@@ -72,7 +73,8 @@ main {
 
 /* Projektkarte */
 .projektKarte {
-    display: none; /* Standardmäßig ausgeblendet (gesteuert durch JS) */
+    display: none;
+    /* Standardmäßig ausgeblendet (gesteuert durch JS) */
     background-color: white;
     color: #333;
     padding: 40px;
@@ -134,7 +136,7 @@ main {
     border-radius: 6px;
     overflow: hidden;
     margin: 25px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .projektMedia a {
@@ -153,7 +155,8 @@ main {
 }
 
 .projPlaceholder {
-    display: none; /* Aktiviert per onerror im HTML */
+    display: none;
+    /* Aktiviert per onerror im HTML */
     width: 100%;
     height: 100%;
     background-color: #f5f5f5;
@@ -217,15 +220,16 @@ main {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .seitenleiste {
         width: 100%;
     }
-    
+
     .wertikalLinie {
-        display: none; /* Vertikale Trennlinie ausblenden */
+        display: none;
+        /* Vertikale Trennlinie ausblenden */
     }
-    
+
     .projektMedia {
         height: 250px;
     }
@@ -266,4 +270,61 @@ main {
     margin: 0;
     font-size: 15px;
     line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        /* Stapelt Seitenleiste und Inhalt untereinander */
+        gap: 20px;
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+
+    .seitenleiste {
+        width: 100%;
+        /* Nimmt die volle Breite ein */
+    }
+
+    .inseiteSeitenliste h2 {
+        text-align: center;
+        /* Überschrift zentrieren */
+    }
+
+    .aplicatinsList {
+        flex-direction: row;
+        /* Die Projekt-Links liegen nebeneinander */
+        flex-wrap: wrap;
+        /* und brechen bei Platzmangel in die nächste Zeile um */
+        justify-content: center;
+    }
+
+    .bestelA {
+        text-align: center;
+        flex: 1 1 140px;
+        /* Buttons wachsen gleichmäßig */
+    }
+
+    .wertikalLinie {
+        display: none;
+        /* Die graue vertikale Trennlinie ausblenden */
+    }
+
+    .projektKarte {
+        padding: 20px;
+        /* Etwas weniger Innenabstand auf kleinen Handy-Displays */
+    }
+
+    /* Die Screenshots in den Projektkarten */
+    .projektGallery {
+        flex-direction: column;
+        /* Screenshots untereinander stapeln */
+        gap: 15px;
+    }
+
+    .projektMedia {
+        max-width: 100%;
+        height: 250px;
+        /* Bilderhöhe für Handys reduzieren */
+    }
 }
