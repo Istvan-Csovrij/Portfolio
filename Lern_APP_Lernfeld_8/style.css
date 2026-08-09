@@ -374,7 +374,7 @@ body {
 
 .changeLinealvertikal {
     width: 1px;
-  margin-top: 8px;
+    margin-top: 8px;
     background-color: gray;
     margin-left: 200px;
 }
@@ -415,7 +415,7 @@ body {
     flex-direction: column;
 }
 
-.prüfAendernClass  {
+.prüfAendernClass {
     width: 80px;
     height: 20px;
     background-color: rgb(243, 219, 188);
@@ -481,7 +481,7 @@ body {
     align-items: center;
 }
 
-.deletbestägenClass{
+.deletbestägenClass {
     background-color: rgb(243, 219, 188);
     cursor: pointer;
     border-radius: 2px;
@@ -489,16 +489,38 @@ body {
     padding: 4px;
 }
 
-.deletbestägenClass:hover{
+.deletbestägenClass:hover {
     background-color: rgb(243, 221, 149);
     box-shadow: 2px 2px 2px 2px;
 }
 
-.bastätigungRed{
+.bastätigungRed {
     background-color: red;
 }
 
-.implementChangeThemaInput{
+.implementChangeThemaInput {
     display: flex;
     margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .workspace {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .containerLebenslauf {
+        margin: 0;
+        width: 140px;
+    }
 }
